@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -54,6 +56,15 @@ class _MyAppState extends State<MyApp> {
               write(txtController.text);
             },
             child: Text("Saqlash"),
+            color: Colors.orange,
+          ),
+          MaterialButton(
+            onPressed: () {
+              setState(() {
+                read();
+              });
+            },
+            child: Text("Oqish"),
             color: Colors.orange,
           ),
           SizedBox(
